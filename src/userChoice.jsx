@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 
 export const UserChoice = () => {
@@ -8,15 +8,11 @@ export const UserChoice = () => {
   if (event.name === ``) {
     userChoice = <p>Событие не выбрано</p>;
   } else {
-    userChoice = (
-      <p>
-        Выбрано событие {event.name}, шанс выигрыша {event.percent}%
-      </p>
-    );
+    userChoice = <p>Выбрано событие {event.name}, шанс выигрыша {event.percent}%</p>;
   }
   return (
     <div>
-      <p>{userChoice}</p>
+      {userChoice}
     </div>
   );
 };
