@@ -4,6 +4,7 @@ import { Header } from "./Header";
 import { IventList } from "./IventsList";
 import { UserChoice } from "./userChoice";
 import { UserBet } from './UserBet';
+import { BtnSubmitBet } from './BtnSubmitBet';
 
 import "./styles.css";
 
@@ -17,8 +18,7 @@ export default function App() {
       <IventList />
       <UserBet />
       <UserChoice />
-
-      <button>Сделать ставку</button>
+      <BtnSubmitBet />
 
       <h1>{message}</h1>
     </div>
