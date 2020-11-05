@@ -24,7 +24,8 @@ const userSlice = createSlice({
     // action.type === имя метода (reducer)
       state.selectedIvent = action.payload;
     },
-    setBudget(state, action) { // Метод, который меняет бюджет пользователя
+    setBudget(state, action) { 
+      console.log('in slice',action.payload)// Метод, который меняет бюджет пользователя
       state.budget = state.budget + action.payload;
     },
     setCurrentProfit(state, action) { // Метод, который устанавливает результат сделанной ставки
