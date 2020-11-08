@@ -3,16 +3,19 @@ import { useSelector } from "react-redux";
 
 export const UserChoice = () => {
   const event = useSelector((state) => state.user.selectedIvent);
-  // console.log(event);
+  // console.log(event.name);
   let userChoice;
-  if (event.name === ``) {
-    userChoice = <p>Событие не выбрано</p>;
+  let userPercent;
+  if (event.name === undefined) { 
+    userChoice = <p className="choice__event-user">Событие не выбрано</p>;
   } else {
-    userChoice = <p>Выбрано событие {event.name}, шанс выигрыша {event.percent}%</p>;
+  userChoice = <p className="choice__event-user">{event.name}</p>;
+  userPercent = <p className="percent__user"> Шанс выйгрыша {event.percent} %</p>;
   }
   return (
     <div>
       {userChoice}
+      {userPercent}
     </div>
   );
 };

@@ -7,8 +7,8 @@ export const Ivent = ({ name, percent }) => {
   const dispatch = useDispatch();
 
   return (
-    <label htmlFor={name}>
-      <input
+    <label htmlFor={name} className="wrapp__oneOfEvent active">
+      <input className="oneOfEvent"
         id={name}
         type="radio"
         value={name}
@@ -17,8 +17,8 @@ export const Ivent = ({ name, percent }) => {
         }}
         name="ivents"
       />
-      {name}
-      <p>Веротность наступления: {percent}%</p>
+      <span className="oneOfEvent__name">{name}</span>
+      <p className="oneOfEvent__percent">{percent}%</p>
     </label>
   );
 };

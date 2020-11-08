@@ -15,15 +15,16 @@ export const UserBet = () => {
     }
   };
 
-  return(
-    <label htmlFor="userBet">
-      Введите вашу ставку:
-      <input
+  return(<div className="user__circle">
+    <label className="user__bet" htmlFor="userBet">
+      <span className="user__bet-sub">Ваша ставка:</span>
+      <input className="user__bet-input"
         type="number"
         id="userBet"
         value={userBet}
         onChange={(event) => onSetUserBet(event.target.value)}
       />
     </label>
+    </div>
   );
 };

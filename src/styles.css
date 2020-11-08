@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   font-family: sans-serif;
   text-align: center;
@@ -5,4 +10,133 @@
 
 label {
   display: block;
+}
+
+.header {
+  background-color: #B8DBBC;
+}
+
+.header__title {
+  margin: 0 auto;
+  width: 920px;
+  padding-top: 36px;
+  font-family: Arial;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 64px;
+  text-transform: uppercase;
+}
+
+.header__title-sub {
+  font-size: 24px;
+  font-weight: 700;
+  position: relative;
+  top: 175px;
+  left: 282px;
+}
+
+.choice {
+  border: 1px solid black;
+  padding-left: 184px;
+  margin-top: 51px;
+  margin-left: 125px;
+  width: 380px;
+  border-radius: 10%;
+}
+
+.events {
+  margin-left: -111px;
+  margin-top: 72px;
+}
+
+.choice__event {
+  padding-bottom: 30px;
+  list-style: none;
+}
+
+.choice__event:last-child {
+  padding-bottom: 136px;
+}
+
+.wrapp__oneOfEvent {
+  width: 420px;
+  height: 80px;
+  border-radius: 10px;
+  background-color: #B8DBBC;
+}
+
+.oneOfEvent {
+  margin-top: 34px;
+  margin-left: -190px;
+  visibility: hidden;
+}
+
+.wrapp__oneOfEvent:active {
+  background-color: blue;
+}
+
+.oneOfEvent__name {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.oneOfEvent__percent {
+  margin-top: -28px;
+  padding-left: 310px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.choice__title {
+  position: relative;
+  top: 167px;
+  left: 437px;
+}
+
+.choice__event-user {
+  position: relative;
+  bottom: 493px;
+  left: 487px;
+}
+
+.percent__user {
+  position: absolute;
+  left: 888px;
+  bottom: 393px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.user__bet {
+  position: relative;
+  bottom: 379px;
+  left: 352px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.user__bet-sub {
+  padding-right: 31px;
+}
+
+.user__bet-input {
+  width: 234px;
+  height: 46px;
+}
+
+.game {
+  position: relative;
+  bottom: 333px;
+  left: 341px;
+  background-color: #B8DBBC;
+  width: 420px;
+  height: 64px;
+  border: none;
+  font-size: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.test {
+  border: 1px solid black
 }
