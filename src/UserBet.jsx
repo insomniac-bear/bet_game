@@ -6,7 +6,6 @@ export const UserBet = () => {
   const dispatch = useDispatch();
   const budget = useSelector((state) => state.user.budget);
   const userBet = useSelector((state) => state.user.currentBet);
-
   const onSetUserBet = (value) => {
     if (value < budget) {
       dispatch(setUserBet(value))
@@ -14,6 +13,7 @@ export const UserBet = () => {
       dispatch(setUserBet(budget));
     }
   };
+
 
   return(
     <label htmlFor="userBet">
