@@ -1,16 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from 'react-redux';
 
 import { Header } from "./Header";
 import { IventList } from "./IventsList";
 import { UserChoice } from "./userChoice";
 import { UserBet } from './UserBet';
 import { BtnSubmitBet } from './BtnSubmitBet';
+import { fetchUser } from './userSlice';
 
 import "./styles.css";
 
 export default function App() {
+  const dispatch = useDispatch();
+  const userFetchStatus = useSelector(state => state.user.status);
+  const error = useSelector(state => state.user.error);
 
-  const [message, setMessage] = useState(`Вы еще не сыграли ни разу`);
+  useEffect(() => {
+    if (userFetchStatus === `idle`) {
+      dispatch(fetchUser())
+    }
+  }, [userFetchStatus, dispatch]);
+
+  const showError = () => {
+    return error ? `${error}` : ``;
+  };
 
   return (
     <div className="App">
@@ -19,8 +32,7 @@ export default function App() {
       <UserBet />
       <UserChoice />
       <BtnSubmitBet />
-
-      <h1>{message}</h1>
+      <h1>{showError()}</h1>
     </div>
   );
 }
