@@ -17,7 +17,7 @@ export const Ivent = ({ name, percent }) => {
         }}
         name="ivents"
       />
-      <span className="oneOfEvent__name">{name}</span>
+      <p className="oneOfEvent__name">{name}</p>
       <p className="oneOfEvent__percent">{percent}%</p>
     </label>
   );

@@ -8,7 +8,6 @@ export const Header = () => {
   return (
     <div className="header">
       <h2 className="header__title">Добро пожаловать на лохотрон {name}!</h2>
-      <p className="header__title-sub">На вашем счету: {'\u00A0'} {'\u00A0'} {userBudget} рублей</p>
     </div>
   );
 };

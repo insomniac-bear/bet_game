@@ -7,7 +7,7 @@ export const IventList = () => {
   const events = useSelector((state) => state.events);
   return (
     <div className="choice">
-      <h2 className="choice__title">Вы выбрали:</h2>
+      {/* <h2 className="choice__title">Вы выбрали:</h2> */}
       <ul className="events">
         {events.map((it) => (
           <li className="choice__event" key={Math.random()}>
