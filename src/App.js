@@ -10,7 +10,6 @@ import { RightPart } from './rightPart.jsx'
 import { fetchUser } from './userSlice';
 import "./styles.css";
 import { Popup } from "./Popup";
-import { useSelector } from "react-redux";
 
 export default function App() {
   const dispatch = useDispatch();

@@ -55,7 +55,7 @@ const userSlice = createSlice({
     },
     setStatusBet(state, action) {
       state.statusBet = action.payload;
-  },
+  }},
   extraReducers: {
     [fetchUser.pending]: (state, action) => {
       state.status = `loading`;
