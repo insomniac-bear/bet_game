@@ -17,8 +17,8 @@ export const UserBet = () => {
 
   return(
     <label htmlFor="userBet">
-      Введите вашу ставку:
-      <input
+      <span className="user__bet-sub">Ваша ставка:</span>
+      <input className="user__bet-input"
         type="number"
         id="userBet"
         value={userBet}

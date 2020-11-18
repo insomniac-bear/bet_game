@@ -1,6 +1,7 @@
 //Подключаем createSlice - создает срез хранилища (отдельную часть хранилища отвечающую за определенную логику приложения)
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"; // createAsyncThunk отвечает за асинхронную логику в редьюсере
 
+
 // Инициализируем начальное состояние хранилища
 const initialState = {
   name: ``,
@@ -8,6 +9,9 @@ const initialState = {
   currentProfit: 0,
   currentBet: 0,
   selectedIvent: {},
+  betResult: '', // устанавливает сообщение о выигрыше или проигрыше
+  flag: -1,
+  statusBet: '', // текст - размер выигрыша - проигрыша
   status: `idle`,
   error: null,
 };
@@ -39,6 +43,18 @@ const userSlice = createSlice({
     setCurrentProfit(state, action) { // Метод, который устанавливает результат сделанной ставки
       state.currentProfit = action.payload;
     },
+    setBetResult: {
+      reducer(state, action) {
+        state.betResult = action.payload;
+      }
+    },
+    setFlag: {
+      reducer(state, action) {
+        state.flag = action.payload;
+      }
+    },
+    setStatusBet(state, action) {
+      state.statusBet = action.payload;
   },
   extraReducers: {
     [fetchUser.pending]: (state, action) => {
@@ -57,7 +73,7 @@ const userSlice = createSlice({
 
 export default userSlice.reducer;
 
-export const { setUserBet, setSelectedIvent, setBudget, setCurrentProfit } = userSlice.actions; // Экспортируем методы (reducers) для изменения хранилища
+export const { setUserBet, setSelectedIvent, setBudget, setCurrentProfit, setBetResult, setFlag, setStatusBet} = userSlice.actions; // Экспортируем методы (reducers) для изменения хранилища
 
 export const getName = (state) => {
   return state.user.name;

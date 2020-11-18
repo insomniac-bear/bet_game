@@ -6,11 +6,11 @@ import { Ivent } from "./Ivent";
 export const IventList = () => {
   const events = useSelector((state) => state.events);
   return (
-    <div>
-      <h2>Выбирете событие на которое хотите сделать ставку:</h2>
-      <ul>
+    <div className="choice">
+      {/* <h2 className="choice__title">Вы выбрали:</h2> */}
+      <ul className="events">
         {events.map((it) => (
-          <li key={Math.random()}>
+          <li className="choice__event" key={Math.random()}>
             <Ivent name={it.name} percent={it.percent} />
           </li>
         ))}

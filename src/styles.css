@@ -1,8 +1,183 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 .App {
-  font-family: sans-serif;
+  font-family: Arial, sans-serif;
   text-align: center;
 }
 
-label {
-  display: block;
+.header {
+  background-color: #B8DBBC;
+  padding-top: 36px;
+  padding-bottom: 20px;
 }
+
+.header__title {
+  margin: 0 auto;
+  font-size: 48px;
+  font-weight: 700;
+  width: 904px;
+  line-height: 64px;
+  text-transform: uppercase;
+}
+
+ .choice {
+  border: 1px solid black;
+  padding-left: 184px;
+  margin-top: 60px;
+  margin-left: 125px;
+  width: 380px;
+  height: 648px;
+  border-radius: 10%;
+}
+
+@media (min-width: 1400px) { 
+  .choice {
+    margin-left: 320px;
+  }
+}
+
+.events {
+  margin-left: -110px;
+  margin-right: 70px;
+  padding-top: 100px;
+  text-align: left;
+  list-style: none;
+}
+
+.choice__event {
+  margin-bottom: 32px;
+  font-size: 24px;
+  font-weight: 700;
+  height: 78px;
+  border-radius: 10px;
+  background-color: #B8DBBC;
+}
+
+.oneOfEvent {
+  visibility: hidden;
+}
+
+.oneOfEvent__name {
+  margin-top: -2px;
+  margin-left: 27px;
+}
+
+.oneOfEvent__percent {
+  margin-top: -27px;
+  margin-right: 32px;
+  text-align: right;
+}
+
+.right__block {
+  border: 1px solid black;
+  margin-left: 750px;
+  margin-top: -651px;
+  width: 562px;
+  height: 648px;
+  border-radius: 10%;
+}
+
+@media (min-width: 1400px) { 
+  .right__block {
+    margin-left: 940px;
+  }
+}
+
+.u__budget-text {
+  padding-top: 95px;
+  padding-right: 90px;
+  padding-bottom: 45px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.u__events-use {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.u__events-sub {
+  padding-right: 192px;
+}
+
+.u__events-cheked{
+  padding-left: 296px;
+  padding-bottom: 38px;
+  margin-top: -29px;
+  font-size: 28px;
+  text-align: left;
+}
+
+.user__bet-sub {
+  font-size: 24px;
+  padding-bottom: 46px;
+  font-weight: 700;
+  margin-top: -9px;
+  margin-left: 82px;
+}
+
+.user__bet-input {
+  width: 234px;
+  margin-left: 31px;
+  margin-bottom: 85px;
+  height: 46px;
+}
+
+.btn__game {
+  padding-left: 57px;
+  margin-top: -22px;
+}
+
+.game {
+  background-color: #B8DBBC;
+  width: 420px;
+  height: 64px;
+  border: none;
+  font-size: 28px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.result__block {
+  position: absolute;
+  width: 1089px;
+  height: 482px;
+  left: 180px;
+  top: 293px;
+  background-color: #B8DBBC;
+  font-size: 36px;
+  font-weight: 700;
+  border-radius: 72px;
+}
+
+@media (min-width: 1400px) { 
+  .result__block  {
+    left: 375px;
+  }
+}
+
+.result__message {
+  padding-top: 110px;
+  padding-left: 45px;
+  padding-bottom: 51px;
+  text-transform: uppercase;
+}
+
+.result__message-sub {
+  padding-bottom: 38px;
+  margin-left: -38px;
+}
+
+.btn__modal-hide {
+  font-size: 36px;
+  font-weight: 700;
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  border: none;
+  margin-left: -7px;
+}
+

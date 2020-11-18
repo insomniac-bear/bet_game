@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = [
-  { name: `Fire`, percent: 10 },
-  { name: `Water`, percent: 5 },
-  { name: `Snow`, percent: 15 },
-  { name: `Danger`, percent: 25 }
+  { name: `Землятресение`, percent: 15 },
+  { name: `Наводнение`, percent: 25 },
+  { name: `Пожар`, percent: 10 },
+  { name: `Ураган`, percent: 20 }
 ];
 
 const eventSlice = createSlice({
