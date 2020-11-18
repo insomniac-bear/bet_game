@@ -1,10 +1,10 @@
 //Подключаем createSlice - создает срез хранилища (отдельную часть хранилища отвечающую за определенную логику приложения)
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"; // createAsyncThunk отвечает за асинхронную логику в редьюсере
 
 
 // Инициализируем начальное состояние хранилища
 const initialState = {
-  name: `Иван Дурак`,
+  name: ``,
   budget: 100,
   currentProfit: 0,
   currentBet: 0,
@@ -12,7 +12,16 @@ const initialState = {
   betResult: '', // устанавливает сообщение о выигрыше или проигрыше
   flag: -1,
   statusBet: '', // текст - размер выигрыша - проигрыша
+  status: `idle`,
+  error: null,
 };
+
+// Функция загрузки данных пользователя с сервера
+export const fetchUser = createAsyncThunk(`user/fetchUser`, async () => {
+  const response = await fetch('https://jsonplaceholder.typicode.com/users/2')
+  const json = await response.json();
+  return json;
+});
 
 // Определяем Срез хранилища, который отвечает за логику игрока
 const userSlice = createSlice({
@@ -28,7 +37,7 @@ const userSlice = createSlice({
     // action.type === имя метода (reducer)
       state.selectedIvent = action.payload;
     },
-    setBudget(state, action) { // Метод, который меняет бюджет пользователя
+    setBudget(state, action) { 
       state.budget = state.budget + action.payload;
     },
     setCurrentProfit(state, action) { // Метод, который устанавливает результат сделанной ставки
@@ -46,6 +55,18 @@ const userSlice = createSlice({
     },
     setStatusBet(state, action) {
       state.statusBet = action.payload;
+  },
+  extraReducers: {
+    [fetchUser.pending]: (state, action) => {
+      state.status = `loading`;
+    },
+    [fetchUser.fulfilled]: (state, action) => {
+      state.status = `succeeded`;
+      state.name = action.payload.name;
+    },
+    [fetchUser.rejected]: (state, action) => {
+      state.status = `failed`;
+      state.error = action.error.message;
     }
   }
 });

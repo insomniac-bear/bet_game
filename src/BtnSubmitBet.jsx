@@ -14,10 +14,11 @@ export const BtnSubmitBet = () => {
 
   const onSubmitUserBet = () => {
     dispatch(setFlag(1));
+
+  const onSubmitUserBet = () => {
+    dispatch(setCurrentProfit(userBet * selectedIvent.percent / 100)); // Текущий выйгрыш
     if (userBet && selectedIvent) {
       const gameResult = Math.random();
-      
-      dispatch(setCurrentProfit(userBet * selectedIvent.percent / 100)); // Текущий выйгрыш
 
       if (gameResult <= selectedIvent.percent / 100) {
         dispatch(setBetResult('Поздравляем, ваша ставка выиграла'))
@@ -29,6 +30,10 @@ export const BtnSubmitBet = () => {
         dispatch(setStatusBet(`Размер проигрыша: ${userBet * selectedIvent.percent / 100} монет`))
         dispatch(setBudget(-(userBet * selectedIvent.percent / 100)));
         return <ModulResult p={false}/>
+      if (gameResult.toFixed(2) <= selectedIvent.percent / 100) {
+        dispatch(setBudget(userBet * selectedIvent.percent / 100));
+      } else {
+        dispatch(setBudget(-(userBet)));
       }
     }
   };
